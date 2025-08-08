@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PageMark</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="popup-header">
+      <h1>📍 PageMark</h1>
+      <p>Save and return to scroll positions</p>
+    </div>
+    
+    <div class="popup-actions">
+      <button id="save-position" class="action-btn primary">
+        <span class="icon">📍</span>
+        Save Current Position
+      </button>
+      <button id="show-markers" class="action-btn secondary">
+        <span class="icon">📋</span>
+        Show Markers
+      </button>
+    </div>
+    
+    <div class="popup-stats">
+      <div class="stat">
+        <span class="stat-number" id="markers-count">0</span>
+        <span class="stat-label">Markers</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" id="pages-count">0</span>
+        <span class="stat-label">Pages</span>
+      </div>
+    </div>
+    
+    <div class="popup-recent">
+      <h3>Recent Markers</h3>
+      <div id="recent-markers" class="recent-list">
+        <div class="empty-state">No markers yet</div>
+      </div>
+    </div>
+    
+    <div class="popup-footer">
+      <div class="shortcuts">
+        <div class="shortcut">
+          <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd>
+          <span>Save position</span>
+        </div>
+        <div class="shortcut">
+          <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd>
+          <span>Show markers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html> 

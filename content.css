@@ -1,0 +1,389 @@
+/* PageMark Extension Styles */
+
+/* Floating Marker Button */
+#pagemark-marker-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+  z-index: 10000;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+#pagemark-marker-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+}
+
+.pagemark-icon {
+  font-size: 24px;
+  color: white;
+}
+
+.pagemark-tooltip {
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#pagemark-marker-btn:hover .pagemark-tooltip {
+  opacity: 1;
+}
+
+/* Markers Panel */
+#pagemark-panel {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 350px;
+  max-height: 500px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  z-index: 10001;
+  display: none;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pagemark-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.pagemark-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.pagemark-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.pagemark-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.pagemark-content {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.pagemark-list {
+  padding: 0;
+}
+
+.pagemark-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+/* Marker Items */
+.pagemark-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+.pagemark-item:hover {
+  background: #f8f9fa;
+}
+
+.pagemark-item:last-child {
+  border-bottom: none;
+}
+
+.pagemark-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.pagemark-item-title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pagemark-item-time {
+  font-size: 12px;
+  color: #666;
+}
+
+.pagemark-item-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 12px;
+}
+
+.pagemark-go-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagemark-go-btn:hover {
+  background: #5a67d8;
+}
+
+.pagemark-delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagemark-delete-btn:hover {
+  background: #c82333;
+}
+
+/* Scrollbar Markers */
+.pagemark-scrollbar-marker {
+  position: fixed;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+  z-index: 10000;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.pagemark-scrollbar-marker:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.6);
+}
+
+.pagemark-scrollbar-icon {
+  font-size: 12px;
+  color: white;
+  line-height: 1;
+}
+
+.pagemark-scrollbar-tooltip {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10001;
+}
+
+.pagemark-scrollbar-marker:hover .pagemark-scrollbar-tooltip {
+  opacity: 1;
+}
+
+/* Auto-save marker styling */
+.pagemark-scrollbar-marker[data-marker-id="auto-save"] {
+  background: linear-gradient(135deg, #ffc107 0%, #ff8c00 100%);
+  box-shadow: 0 2px 8px rgba(255, 193, 7, 0.4);
+}
+
+.pagemark-scrollbar-marker[data-marker-id="auto-save"]:hover {
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.6);
+}
+
+/* Notifications */
+.pagemark-notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 10002;
+  box-shadow: 0 4px 20px rgba(40, 167, 69, 0.3);
+  animation: slideInDown 0.3s ease;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Scrollbar Styling */
+.pagemark-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.pagemark-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.pagemark-content::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.pagemark-content::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #pagemark-panel {
+    width: calc(100vw - 40px);
+    right: 20px;
+    left: 20px;
+  }
+  
+  #pagemark-marker-btn {
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .pagemark-icon {
+    font-size: 20px;
+  }
+  
+  .pagemark-scrollbar-marker {
+    right: 5px;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .pagemark-scrollbar-icon {
+    font-size: 10px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  #pagemark-panel {
+    background: #1a1a1a;
+    border-color: #333;
+  }
+  
+  .pagemark-item {
+    border-bottom-color: #333;
+  }
+  
+  .pagemark-item:hover {
+    background: #2a2a2a;
+  }
+  
+  .pagemark-item-title {
+    color: #fff;
+  }
+  
+  .pagemark-item-time {
+    color: #ccc;
+  }
+  
+  .pagemark-scrollbar-marker {
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.6);
+  }
+  
+  .pagemark-scrollbar-marker:hover {
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.8);
+  }
+}
+
+/* Pulse animation for new markers */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.pagemark-scrollbar-marker.new {
+  animation: pulse 2s ease-in-out;
+}
+
+/* Ensure markers don't interfere with page content */
+.pagemark-scrollbar-marker {
+  pointer-events: auto;
+}
+
+/* Hide markers when input is focused (optional) */
+input:focus ~ .pagemark-scrollbar-marker,
+textarea:focus ~ .pagemark-scrollbar-marker {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+/* Show markers again when input loses focus */
+input:not(:focus) ~ .pagemark-scrollbar-marker,
+textarea:not(:focus) ~ .pagemark-scrollbar-marker {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+} 
